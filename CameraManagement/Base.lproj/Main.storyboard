@@ -1,26 +1,85 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CameraManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0B-hl-OnS">
+                                <rect key="frame" x="152" y="169" width="54" height="30"/>
+                                <color key="backgroundColor" red="0.18283205229981628" green="0.54195504165188091" blue="0.83486479922279799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Gallery">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4CU-tr-VTv">
+                                <rect key="frame" x="59" y="249" width="240" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coat buh" translatesAutoresizingMaskIntoConstraints="NO" id="tCu-QC-cE4">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="tCu-QC-cE4" secondAttribute="bottom" id="9M4-OS-i5r"/>
+                                    <constraint firstItem="tCu-QC-cE4" firstAttribute="top" secondItem="4CU-tr-VTv" secondAttribute="top" id="HkW-kj-gAV"/>
+                                    <constraint firstAttribute="trailing" secondItem="tCu-QC-cE4" secondAttribute="trailing" id="N11-nQ-ZrW"/>
+                                    <constraint firstItem="tCu-QC-cE4" firstAttribute="leading" secondItem="4CU-tr-VTv" secondAttribute="leading" id="QWc-hY-kHK"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CR-jb-FI2">
+                                <rect key="frame" x="125" y="64" width="54" height="30"/>
+                                <color key="backgroundColor" red="0.18283205229981628" green="0.54195504165188091" blue="0.83486479922279799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Camera">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="callMe:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lwS-sR-PRB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="r0B-hl-OnS" secondAttribute="trailing" constant="98" id="2NA-4n-YSH"/>
+                            <constraint firstItem="4CU-tr-VTv" firstAttribute="centerX" secondItem="r0B-hl-OnS" secondAttribute="centerX" id="2aS-Jb-Cpf"/>
+                            <constraint firstItem="r0B-hl-OnS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="Kiu-gu-nvP"/>
+                            <constraint firstItem="4CU-tr-VTv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="43" id="T39-MU-nJg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4CU-tr-VTv" secondAttribute="bottom" constant="191" id="Ywn-EK-8eC"/>
+                            <constraint firstItem="4CU-tr-VTv" firstAttribute="top" secondItem="r0B-hl-OnS" secondAttribute="bottom" constant="50" id="eCi-5g-V4M"/>
+                            <constraint firstItem="5CR-jb-FI2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-8" id="fzf-6B-giW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4CU-tr-VTv" secondAttribute="trailing" constant="5" id="oRU-XD-8Ba"/>
+                            <constraint firstItem="5CR-jb-FI2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-205" id="yMO-z3-ptI"/>
+                            <constraint firstItem="5CR-jb-FI2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="ygj-JT-TYm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bitmapImagView" destination="tCu-QC-cE4" id="gbr-DW-wAb"/>
+                        <outlet property="cameraBtn" destination="5CR-jb-FI2" id="4vo-0A-Qw8"/>
+                        <outlet property="galleryBtn" destination="r0B-hl-OnS" id="hUz-sO-tW9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="coat buh" width="276" height="354"/>
+    </resources>
 </document>
