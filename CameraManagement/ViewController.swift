@@ -67,11 +67,16 @@ var picker:UIImagePickerController?=UIImagePickerController()
         dismiss(animated: true, completion: nil)
     }
     
-      func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-    let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-    bitmapImagView.contentMode = .scaleAspectFit
-    bitmapImagView.image = chosenImage
-    dismiss(animated: true, completion: nil)
+
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            bitmapImagView.image = image
+        } else{
+            print("Something went wrong")
+        }
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
